@@ -1,0 +1,10 @@
+bin
+obj
+*.nupkg
+/Nuget
+.dtbcache
+.suo
+db.lock
+storage.ide
+storage.ide-shm
+storage.ide-wal
