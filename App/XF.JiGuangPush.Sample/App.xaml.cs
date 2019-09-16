@@ -23,8 +23,6 @@ namespace XF.JiGuangPush.Sample
             JiGuangPush.Shared.JPushInstance.Instance.OnRegistered += Instance_OnRegistered;
             JiGuangPush.Shared.JPushInstance.Instance.OnOperationResult += Instance_OnOperationResult;
             JiGuangPush.Shared.JPushInstance.Instance.Init(true);
-
-            string id = JiGuangPush.Shared.JPushInstance.Instance.GetRegistrationId();
         }
 
         private void Instance_OnOperationResult(object sender, Shared.Classes.JOperationMessage e)
