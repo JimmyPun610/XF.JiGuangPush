@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<package>
+  <metadata>
+    <id>XF.JiGuang</id>
+    <version>1.0.0</version>
+    <title>XF.JiGuang</title>
+    <authors>Jimmy Pun</authors>
+    <owners>Jimmy Pun</owners>
+    <licenseUrl>https://github.com/JimmyPun610/XF.JiGuangPush</licenseUrl>
+    <projectUrl>https://github.com/JimmyPun610/XF.JiGuangPush</projectUrl>
+    <iconUrl>https://banner2.kisspng.com/20180713/olo/kisspng-nuget-net-framework-package-manager-software-repo-nuget-5b487dc3ba81a7.452233091531477443764.jpg</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>This is the xamarin library for push notification in mainland china via JiGuang 極光</description>
+    <releaseNotes>
+		1.0.0 Support of Android.
+	</releaseNotes>
+    <copyright>Copyright 2019</copyright>
+    <tags>Xamarin.Forms Push Notification</tags>
+	<dependencies>
+		<group targetFramework="netstandard2.0">
+			<!--MonoAndroid dependencies go here-->
+			<dependency id="Xamarin.Essentials" version="1.1.0" />
+			<dependency id="Xamarin.Forms" version="3.6.0.709228" />
+		</group>
+		<group targetFramework="Xamarin.iOS10">
+			<!--MonoAndroid dependencies go here-->
+			<dependency id="Xamarin.Essentials" version="1.1.0" />
+			<dependency id="Xamarin.Forms" version="3.6.0.709228" />
+		</group>
+		<group targetFramework="MonoAndroid90">
+			<!--MonoAndroid dependencies go here-->
+			<dependency id="Xamarin.Essentials" version="1.1.0" />
+			<dependency id="Xamarin.Forms" version="3.6.0.709228" />
+			<dependency id="Xamarin.Android.JiGuang" version="3.3.6" />
+			<dependency id="Xamarin.Android.Support.v7.AppCompat" version="28.0.0.1" />
+		</group>
+	</dependencies>
+  </metadata>
+  <!-- Insert below <metadata> element -->
+<files>
+    <!-- Cross-platform reference assemblies -->
+    <file src="..\XF.JiGuangPush.Shared\bin\Debug\netstandard2.0\*.dll" target="lib\netstandard2.0" />
+	<file src="..\XF.JiGuangPush.Shared\bin\Debug\netstandard2.0\*.dll" target="lib\xamarin.ios10" />
+	<file src="..\XF.JiGuangPush.Shared\bin\Debug\netstandard2.0\*.dll" target="lib\monoandroid" />
+	<file src="..\XF.JiGuangPush.Droid\bin\Debug\*.dll" target="lib\monoandroid" />
+</files>
+</package>

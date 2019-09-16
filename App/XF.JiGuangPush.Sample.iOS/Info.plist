@@ -24,8 +24,6 @@
 	<string>8.0</string>
 	<key>CFBundleDisplayName</key>
 	<string>XF.JiGuangPush.Sample</string>
-	<key>CFBundleIdentifier</key>
-	<string>hk.com.nwconstruction.fun</string>
 	<key>CFBundleVersion</key>
 	<string>1.0</string>
 	<key>UILaunchStoryboardName</key>
