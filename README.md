@@ -3,12 +3,13 @@
 
 Product website : https://www.jiguang.cn/push
 
+Currently, this library only support Android
 # Installataion 
 ```
 Install-Package XF.JiGuang -Version 1.0.0
 ```
 
-# Usage
+# Android Project Setup
 1. Create Custom JCommonService class, setup the service name, replace {ProjectNamespace} to your project namespace like "XF.JiGuangPush.Sample.Droid.Notificaiton"
 ```c#
 [Service(Name = "{ProjectNamespace}.MyJCommonService")]
@@ -179,4 +180,33 @@ public class MyJPushMessageReceiver : XFJiGuangPushMessageReceiver
 - {your_application_id}
 - {ProjectNamespace}.MyJPushMessageReceiver
 - {ProjectNamespace}.MyJCommonService
+```
+
+# Xamarin Form Project Setup
+Init the service, prefer doing it in App.cs
+```C#
+JiGuangPush.Shared.JPushInstance.Instance.Init(debugMode);
+```
+
+Setup action when receive callback from JiGuang server, you can let your application response to the callback
+```C#
+JiGuangPush.Shared.JPushInstance.Instance.OnMessageReceived  += Instance_OnMessageReceived;
+JiGuangPush.Shared.JPushInstance.Instance.OnMessageOpened += Instance_OnMessageOpened;
+JiGuangPush.Shared.JPushInstance.Instance.OnConnected += Instance_OnConnected;
+JiGuangPush.Shared.JPushInstance.Instance.OnRegistered += Instance_OnRegistered;
+JiGuangPush.Shared.JPushInstance.Instance.OnOperationResult += Instance_OnOperationResult;
+```
+Current support methods, please refer to official site for the usage.
+```C#
+void Init(bool debugMode);
+string GetRegistrationId();
+void SetAlias(JiGuangSequence sequence, string alias);
+void DeleteAlias(JiGuangSequence sequence);
+void GetAlias(JiGuangSequence sequence);
+void SetTags(JiGuangSequence sequence, List<string> tags);
+void AddTags(JiGuangSequence sequence, List<string> tags);
+void DeleteTags(JiGuangSequence sequence, List<string> tags);
+void CleanTags(JiGuangSequence sequence);
+void GetAllTags(JiGuangSequence sequence);
+void SetChannel(string channel);
 ```
