@@ -13,7 +13,8 @@ namespace XF.JiGuangPush.Shared
         {
             get
             {
-                _instance = new JPushInstance();
+                if(_instance == null)
+                    _instance = new JPushInstance();
                 return _instance;
             }
         }
@@ -104,6 +105,17 @@ namespace XF.JiGuangPush.Shared
         public void SetChannel(string channel)
         {
             DependencyService.Get<IMethods>().SetChannel(channel);
+        }
+
+
+        public void ClearAllNotification()
+        {
+            DependencyService.Get<IMethods>().ClearAllNotification();
+        }
+
+        public void ClearNotifcation(int notificationId)
+        {
+            DependencyService.Get<IMethods>().ClearNotifcation(notificationId);
         }
         #endregion
     }

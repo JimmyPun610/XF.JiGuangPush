@@ -19,6 +19,13 @@ namespace XF.JiGuangPush.Sample.Droid.Notificaiton
     //public class MyJPushMessageReceiver : XFJiGuangPushMessageReceiver
     public class MyJPushMessageReceiver : XFJiGuangPushMessageReceiver
     {
-  
+        public override void OnNotifyMessageOpened(Context p0, NotificationMessage p1)
+        {
+            //Open your application before trigger the open action
+            Intent i = new Intent(p0, typeof(MainActivity));
+            i.AddFlags(ActivityFlags.SingleTop);
+            Android.App.Application.Context.StartActivity(i);
+            base.OnNotifyMessageOpened(p0, p1);
+        }
     }
 }

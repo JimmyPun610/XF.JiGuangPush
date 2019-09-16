@@ -74,5 +74,15 @@ namespace XF.JiGuangPush.Droid
         {
             JPushInterface.SetChannel(Android.App.Application.Context, channel);
         }
+
+        public void ClearAllNotification()
+        {
+            JPushInterface.ClearAllNotifications(Android.App.Application.Context);
+        }
+
+        public void ClearNotifcation(int notificationId)
+        {
+            JPushInterface.ClearNotificationById(Android.App.Application.Context, notificationId);
+        }
     }
 }

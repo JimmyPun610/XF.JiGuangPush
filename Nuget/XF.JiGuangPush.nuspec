@@ -2,7 +2,7 @@
 <package>
   <metadata>
     <id>XF.JiGuang</id>
-    <version>1.0.0</version>
+    <version>1.0.5</version>
     <title>XF.JiGuang</title>
     <authors>Jimmy Pun</authors>
     <owners>Jimmy Pun</owners>
@@ -12,7 +12,7 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>This is the xamarin library for push notification in mainland china via JiGuang 極光</description>
     <releaseNotes>
-		1.0.0 Support of Android.
+		1.0.5 Support of Android.
 	</releaseNotes>
     <copyright>Copyright 2019</copyright>
     <tags>Xamarin.Forms Push Notification</tags>

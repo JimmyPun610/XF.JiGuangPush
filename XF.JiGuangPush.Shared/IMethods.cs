@@ -26,5 +26,9 @@ namespace XF.JiGuangPush.Shared
         void GetAllTags(JiGuangSequence sequence);
 
         void SetChannel(string channel);
+
+        void ClearAllNotification();
+
+        void ClearNotifcation(int notificationId);
     }
 }

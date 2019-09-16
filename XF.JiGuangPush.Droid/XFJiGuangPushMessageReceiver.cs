@@ -21,12 +21,15 @@ namespace XF.JiGuangPush.Droid
         public override void OnRegister(Context p0, string p1)
         {
             base.OnRegister(p0, p1);
+            JiGuangPush.Shared.JPushInstance.Instance.TriggerOnRegistered(p1);
+
         }
 
         public override void OnConnected(Context p0, bool p1)
         {
             base.OnConnected(p0, p1);
-         
+            JiGuangPush.Shared.JPushInstance.Instance.TriggerOnConnected(p1);
+
         }
 
         public override void OnTagOperatorResult(Context p0, JPushMessage p1)
@@ -73,7 +76,8 @@ namespace XF.JiGuangPush.Droid
                 ChannelId = p1.NotificationChannelId,
                 Content = p1.NotificationContent,
                 Extras = p1.NotificationExtras,
-                Title = p1.NotificationTitle
+                Title = p1.NotificationTitle,
+                NotifcationId = p1.NotificationId
             };
             JiGuangPush.Shared.JPushInstance.Instance.TriggerOnMessageReceived(jNotificationMessage);
             
@@ -90,7 +94,8 @@ namespace XF.JiGuangPush.Droid
                 ChannelId = p1.NotificationChannelId,
                 Content = p1.NotificationContent,
                 Extras = p1.NotificationExtras,
-                Title = p1.NotificationTitle
+                Title = p1.NotificationTitle,
+                NotifcationId = p1.NotificationId
             };
             JiGuangPush.Shared.JPushInstance.Instance.TriggerOnMessageOpened(jNotificationMessage);
         }

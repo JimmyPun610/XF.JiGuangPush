@@ -11,5 +11,6 @@ namespace XF.JiGuangPush.Shared.Classes
         public string Extras { get; set; }
         public string Title { get; set; }
         public string Content { get; set; }
+        public int NotifcationId { get; set; }
     }
 }

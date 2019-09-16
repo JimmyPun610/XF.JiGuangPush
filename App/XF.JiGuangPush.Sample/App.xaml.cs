@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 using System;
+using System.Linq;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -27,27 +28,39 @@ namespace XF.JiGuangPush.Sample
 
         private void Instance_OnOperationResult(object sender, Shared.Classes.JOperationMessage e)
         {
-            MainPage.DisplayAlert("OnOperationResult", JsonConvert.SerializeObject(e), "OK");
+            Device.BeginInvokeOnMainThread(async () =>
+            {
+                await Application.Current.MainPage.DisplayAlert("OnOperationResult", JsonConvert.SerializeObject(e), "OK");
+            });
         }
 
         private void Instance_OnRegistered(object sender, string e)
         {
-            MainPage.DisplayAlert("OnRegistered", e, "OK");
+            Device.BeginInvokeOnMainThread(async () =>
+            {
+                await Application.Current.MainPage.DisplayAlert("OnRegistered", e, "OK");
+            });
         }
 
         private void Instance_OnConnected(object sender, bool e)
         {
-            MainPage.DisplayAlert("OnConnected", e.ToString(), "OK");
+            //MainPage.DisplayAlert("OnConnected", e.ToString(), "OK");
         }
 
         private void Instance_OnMessageOpened(object sender, Shared.Classes.JNotificationMessage e)
         {
-            MainPage.DisplayAlert("OnMessageOpened", JsonConvert.SerializeObject(e), "OK");
+            Device.BeginInvokeOnMainThread(async () =>
+            {
+                await Application.Current.MainPage.DisplayAlert("OnMessageOpened", JsonConvert.SerializeObject(e), "OK");
+            });
         }
 
         private void Instance_OnMessageReceived(object sender, Shared.Classes.JNotificationMessage e)
         {
-            MainPage.DisplayAlert("OnMessageReceived", JsonConvert.SerializeObject(e), "OK");
+            Device.BeginInvokeOnMainThread(async () =>
+            {
+                await Application.Current.MainPage.DisplayAlert("OnMessageReceived", JsonConvert.SerializeObject(e), "OK");
+            });
         }
 
         protected override void OnStart()

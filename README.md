@@ -6,7 +6,7 @@ Product website : https://www.jiguang.cn/push
 Currently, this library only support Android
 # Installataion 
 ```
-Install-Package XF.JiGuang -Version 1.0.0
+Install-Package XF.JiGuang -Version 1.0.2
 ```
 
 # Android Project Setup
@@ -51,6 +51,11 @@ public class MyJPushMessageReceiver : XFJiGuangPushMessageReceiver
 
         public override void OnNotifyMessageOpened(Context p0, NotificationMessage p1)
         {
+		    //Open your application before trigger the open action
+            Intent i = new Intent(p0, typeof(MainActivity));
+            i.AddFlags(ActivityFlags.SingleTop);
+            Android.App.Application.Context.StartActivity(i);
+		
             base.OnNotifyMessageOpened(p0, p1);
         }
 }
@@ -209,4 +214,6 @@ void DeleteTags(JiGuangSequence sequence, List<string> tags);
 void CleanTags(JiGuangSequence sequence);
 void GetAllTags(JiGuangSequence sequence);
 void SetChannel(string channel);
+void ClearAllNotification();
+void ClearNotifcation(int notificationId);
 ```
