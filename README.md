@@ -6,7 +6,7 @@ Product website : https://www.jiguang.cn/push
 Currently, this library only support Android
 # Installataion 
 ```
-Install-Package XF.JiGuang -Version 1.0.2
+Install-Package XF.JiGuang -Version 1.0.5
 ```
 
 # Android Project Setup
